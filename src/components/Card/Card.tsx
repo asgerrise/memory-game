@@ -16,7 +16,7 @@ function Card(props: Props) {
       tabIndex={0}
       className={[
         "card",
-        props.active || props.found ? "active" : "",
+        props.active ? "active" : "",
         props.found ? "found" : "",
       ]
         .join(" ")

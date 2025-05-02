@@ -21,8 +21,15 @@ function Deck() {
   }, []);
 
   const onSetActive = (index: number) => {
-    // Disable clicks if there are currently 2 selected cards
-    if (activeCards.length === 2) {
+    // Disable clicks in case:
+    // - There are currently 2 selected cards
+    // - When clicking already active card
+    // - When clicking a previously found card
+    if (
+      activeCards.length === 2 ||
+      index === activeCards[0] ||
+      foundCards.includes(cards[index])
+    ) {
       return;
     }
 
