@@ -8,6 +8,7 @@
         transition: transform 0.5s, scale 0.15s;
         height: 100%;
         display: grid;
+        grid-auto-rows: minmax(0, 1fr);
     }
 
     & .card--front,
@@ -16,10 +17,10 @@
         border-radius: 0.5rem;
         grid-area: 1 / 1 / 2 / 2;
         backface-visibility: hidden;
-        display: grid;
     }
 
     & .card--front {
+        display: grid;
         transform: rotateY(180deg);
         user-select: none;
         background-color: white;
@@ -29,7 +30,14 @@
     }
 
     & .card--back {
+        display: flex;
         align-items: stretch;
+
+        & img {
+            max-width: 100%;
+            width: 12vh;
+            flex: 1;
+        }
     }
 
     &:not(.active):hover .card--inner {
