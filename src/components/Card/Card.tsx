@@ -13,12 +13,20 @@ type Props = {
 function Card(props: Props) {
   return (
     <li
+      tabIndex={0}
       className={[
         "card",
         props.active || props.found ? "active" : "",
         props.found ? "found" : "",
-      ].join(" ")}
+      ]
+        .join(" ")
+        .trim()}
       onClick={() => props.setActive(props.index)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          props.setActive(props.index);
+        }
+      }}
     >
       <div className="card--inner">
         <div className="card--front">
