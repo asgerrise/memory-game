@@ -13,7 +13,7 @@ type Props = {
 function Card(props: Props) {
   return (
     <li
-      tabIndex={0}
+      tabIndex={!props.found ? 0 : undefined}
       className={[
         "card",
         props.active ? "active" : "",

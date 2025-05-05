@@ -95,7 +95,11 @@ function Deck() {
         <div className="overlay">
           <div className="overlay--content">
             <h2>You won!</h2>
-            <button className="reset" onClick={() => resetCards()}>
+            <button
+              className="reset"
+              onClick={() => resetCards()}
+              tabIndex={isGameComplete ? 0 : -1}
+            >
               Reset Game
             </button>
           </div>
