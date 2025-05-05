@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import "./Card.css";
 import { Animal } from "../../constants/animals";
+import cardBack from "../../assets/card-back.svg"
 
 type Props = {
   active: boolean;
@@ -33,7 +34,7 @@ function Card(props: Props) {
           <Icon icon={`noto:${props.animal}`} />
         </div>
         <div className="card--back">
-          <img src="/src/assets/card-back.svg" alt="Playing card background" />
+          <img src={cardBack} alt="Playing card background" />
         </div>
       </div>
     </li>
